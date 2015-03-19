@@ -1,0 +1,25 @@
+<?
+
+use \Doctrine\Common\Collections\ArrayCollection;
+
+/**
+ * @Entity @Table(name="accounts")
+ */
+class Account extends \Core\BaseEntity
+{
+    /**
+     * @Id @Column(type="integer") @GeneratedValue
+     */
+    private $id;
+
+    /**
+     * @Column(type="string", length=30, name="name", nullable=false)
+     */
+    private $name;
+	
+	/**
+     * @Column(type="string", length=200, name="comment", nullable=true)
+     */
+    private $comment;
+
+}

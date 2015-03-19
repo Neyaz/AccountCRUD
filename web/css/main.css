@@ -1,0 +1,15 @@
+/* global */
+.left{float:left}
+.right{float:right}
+.clear{clear:both}
+
+/* main */
+h1 { font-size: 150%; margin: 10px 5px; color: #666; font-weight: bold; }
+h2 { font-size: 120%; margin: 10px 5px; color: #555; font-weight: bold; }
+h3 { font-size: 100%; margin: 10px 5px; color: #444; font-weight: bold; }
+p { margin: 5px; color: #333; }
+ul { margin-left: 20px; }
+
+th { font-weight: bold; }
+td { padding: 1px 5px; }
+tr:hover { background-color: #e9f7ff; }

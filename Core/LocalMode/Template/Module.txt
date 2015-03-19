@@ -1,0 +1,14 @@
+<?
+
+/**
+ * %name%
+ */
+class %name% extends Module
+{
+    function OnIndex()
+    {
+        $this->Show('Index');
+    }
+}
+
+?>

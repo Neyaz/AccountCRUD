@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project name="%project%" default="build">
+  <target name="build" depends="clean,prepare,remove-hosts,add-hosts,codeception" >
+    <antcall target="remove-hosts" />
+  </target>
+
+
+  <target name="clean" description="Cleanup build artifacts">
+    <delete dir="${basedir}/tests/_log" includes="**/*" />
+    <delete dir="${basedir}/build/logs" />
+  </target>
+
+  <target name="prepare" depends="clean" description="Prepare for build">
+    <mkdir dir="${basedir}/build/logs" />
+  </target>
+
+  <target name="codeception">
+    <exec dir="${basedir}" executable="php" failonerror="true">
+      <arg line="codecept.phar run --xml --html" />
+    </exec>
+  </target>
+
+  <target name="lint" description="Perform syntax check of sourcecode files">
+    <apply executable="php" failonerror="true">
+      <arg value="-l" />
+
+      <fileset dir="${basedir}/www">
+        <include name="**/*.php" />
+        <modified />
+      </fileset>
+
+      <fileset dir="${basedir}/tests">
+        <include name="**/*.php" />
+        <modified />
+      </fileset>
+    </apply>
+  </target>
+
+  <target name="add-hosts" description="Add virtual host for nginx">
+    <exec executable="sudo">
+      <arg value="update-hosts" />
+      <arg value="add" />
+      <arg value="%project%" />
+    </exec>
+  </target>
+
+  <target name="remove-hosts" description="Remove virtual host from nginx">
+    <exec executable="sudo">
+      <arg value="update-hosts" />
+      <arg value="remove" />
+      <arg value="%project%" />
+    </exec>
+  </target>
+
+  <target name="phpmd" description="Perform project mess detection using PHPMD creating a log file for the continuous integration server">
+    <exec executable="phpmd">
+      <arg path="${basedir}/www" />
+      <arg value="xml" />
+      <arg value="${basedir}/build/phpmd.xml" />
+      <arg value="--reportfile" />
+      <arg value="${basedir}/build/logs/pmd.xml" />
+
+      <arg value="--ignore" />
+      <arg value="${basedir}/www/Core/" />
+
+    </exec>
+  </target>
+</project>

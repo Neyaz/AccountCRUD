@@ -1,0 +1,17 @@
+<?
+
+namespace %app%;
+
+/**
+ * %name%
+ */
+class %name% extends \Core\Controller
+{
+    /**
+     * @default Index
+     */
+    function OnIndex()
+    {
+        $this->Result()->items = array('this', 'is', 'test');
+    }
+}

@@ -1,0 +1,8 @@
+index:
+  module: Core\Pages
+  app: Front
+  layout: Index
+
+test/*:
+  module: Front\Test
+  action: %1

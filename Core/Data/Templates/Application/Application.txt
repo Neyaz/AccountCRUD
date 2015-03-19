@@ -1,0 +1,15 @@
+<?
+
+/**
+ * %name%
+ */
+class %name%Application extends Core\Application
+{
+    function BeforeExecute()
+    {
+    }
+
+    function AfterExecute()
+    {
+    }
+}

@@ -1,0 +1,45 @@
+mode: dev # prod, test
+
+default:
+  title: Стандартное приложение
+  locale: 'ru_RU'
+
+localization: false
+
+database:
+  dev:
+    host: localhost
+    dbname: dev_Database
+    user: root
+    password: ''
+  test:
+    host: localhost
+    dbname: test_Database
+    user: root
+    password: ''
+  prod:
+    host: localhost
+    dbname: prod_Database
+    user: root
+    password: ''
+
+rootmode:
+  enabled: on
+  hash: %rootmode_hash%
+
+%jenkins%
+
+user:
+  lifetime: 7d
+  class: AppUser
+  fix_ip: on
+  sub_domains: off
+  salt: %salt%
+
+cookies:
+  lifetime: 20d
+  sub_domains: off
+
+error:
+  module: Core\Pages
+  app: Front

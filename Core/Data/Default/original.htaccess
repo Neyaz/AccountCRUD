@@ -1,0 +1,14 @@
+php_flag display_errors on
+AddDefaultCharset utf-8
+
+RewriteEngine On
+RewriteRule ^index.php - [L]
+RewriteRule ^favicon.ico - [L]
+RewriteRule ^web - [L]
+RewriteRule ^files - [L]
+RewriteRule ^(.*)$ /index.php [L,QSA]
+
+<FilesMatch "\.yml$">
+    order allow,deny
+    deny from all
+</FilesMatch>

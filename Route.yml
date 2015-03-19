@@ -1,0 +1,13 @@
+index:
+  module: Core\Pages
+  app: Front
+  layout: Index
+  action: %1
+
+test/*:
+  module: Front\Test
+  action: %1
+
+accounts/*:
+  module: Front\AccountModule
+  action: %1

@@ -1,0 +1,12 @@
+<?
+
+/**
+ * %name% Helper
+ */
+class %name% extends \Core\Helper
+{
+    static function Show($text)
+    {
+        return "<p>$text</p>";
+    }
+}

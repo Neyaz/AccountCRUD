@@ -1,0 +1,40 @@
+mode: dev # prod, test
+
+default:
+  title: Стандартное приложение
+
+database:
+  dev:
+    host: 127.0.0.1
+    dbname: test2
+    user: root
+    password: 'root'
+  test:
+    host: localhost
+    dbname: training
+    user: root
+    password: ''
+  prod:
+    host: localhost
+    dbname: training
+    user: root
+    password: ''
+
+rootmode:
+  enabled: on
+  hash: 6760EAA9496FEAD80DAA895C4ADB8C92
+
+user:
+  lifetime: 7d
+  class: AppUser
+  fix_ip: on
+  sub_domains: off
+  salt: 2BD1BE13F43D4A950DD427AEBBDC5034
+
+cookies:
+  lifetime: 20d
+  sub_domains: off
+
+error:
+  module: Core\Pages
+  app: Front

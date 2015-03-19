@@ -1,0 +1,13 @@
+Account:
+  A1:
+    login: vasek
+    name: Васек
+    email: vasek@gmail.com
+    gender: male
+    comment: Текст
+  A2:
+    login: kolyan
+    name: Колян
+    email: kolyan@gmail@com
+    gender: male
+    comment: Колян крут
